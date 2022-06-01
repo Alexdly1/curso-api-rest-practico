@@ -1,5 +1,5 @@
-window.addEventListener('DOMContentLoaded',navigator, false);
-window.addEventListener('hashchange',navigator, false);
+window.addEventListener('DOMContentLoaded',navigator, false);//cuando cargamos la pagina
+window.addEventListener('hashchange',navigator, false);//cuando cambiamos el hash
 
 function navigator() {
   console.log({ location });

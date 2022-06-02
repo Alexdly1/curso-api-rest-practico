@@ -17,9 +17,10 @@ async function getTrendingMoviesPreview() {
   // const data = await res.json();
 
   const  movies = data.results;
-  movies.forEach(movie => {
-    const trendingMoviesPreviewList = document.querySelector('#trendingPreview .trendingPreview-movieList')
 
+  trendingMoviesPreviewList.innerHTML= "";
+
+  movies.forEach(movie => {
     const movieContainer = document.createElement('div');
     movieContainer.classList.add('movie-container');
 
@@ -44,9 +45,10 @@ async function getCategoriesPreview() {
   //const data = await res.json(); esto lo hace axios 
   
   const  categories = data.genres;
-  categories.forEach(category => {
-    const categoriesPreviewList = document.querySelector('#categoriesPreview .categoriesPreview-list')
 
+  categoriesPreviewList.innerHTML = "";//borra el contenido para cuando lo volvamos a llamar no se repita
+
+  categories.forEach(category => {
     const categoryContainer = document.createElement('div');
     categoryContainer.classList.add('category-container');
 

@@ -27,6 +27,9 @@ function navigator() {
   } else {
     homePage();
   }
+
+  document.documentElement.scrollTop = 0;//safari
+  document.body.scrollTop = 0;//para que el scroll empieze desde arriba
 }
 
 function homePage() {
@@ -64,6 +67,14 @@ function categoriesPage() {
   categoriesPreviewSection.classList.add('inactive');
   genericSection.classList.remove('inactive');
   movieDetailSection.classList.add('inactive');
+  //url = [0, 1]
+  // const urlPage = url[0];
+  // const urlInfo = url[1];
+  const [_, categoryData] = location.hash.split('=');//=>['#category', 'id-name']
+  const [categoryId, categoryName] = categoryData.split('-');
+  const newName = decodeURI(categoryName)
+  headerCategoryTitle.innerHTML = newName;//BORRA LOS ESPACIO QUE SON REEMPLAZADOS POR %20
+  getMoviesByCategory(categoryId);
 }
 
 function movieDetailsPage() {

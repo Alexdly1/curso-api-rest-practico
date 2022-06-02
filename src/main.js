@@ -146,3 +146,15 @@ async function getMoviesByCategory(id) {
   //   genericSection.appendChild(movieContainer)
   // });
 }
+
+async function getMoviesBySearch(query) {
+  const { data } = await api('search/movie', {
+    params: {
+      query//query:query
+    },
+  });
+  const  movies = data.results;
+
+  createMovies(movies, genericSection);
+}
+

@@ -193,8 +193,9 @@ async function getMovieById(id) {
 }
 
 async function getRelatedMoviesId(id) {
-  const { data } = await api(`movie/${id}/recommendations`);
+  const { data } = await api(`movie/${id}/similar`);//recommendations
   const relatedMovies = data.results;
 
   createMovies(relatedMovies, relatedMoviesContainer);
+  relatedMoviesContainer.scrollTo(0, 0);//error de scroll
 }

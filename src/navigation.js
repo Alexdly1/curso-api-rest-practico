@@ -1,6 +1,9 @@
 searchFormBtn.addEventListener('click', () => {
   location.hash = '#search=' + searchFormInput.value.trim();
 });
+//Error busqueda vacias
+// searchFormBtn.addEventListener('click', 
+//   e => searchFormInput.value !== "" ? location.hash = 'search=' + searchFormInput.value  : e.preventDefault())
 
 trendingBtn.addEventListener('click', () => {
   location.hash = '#trends';
